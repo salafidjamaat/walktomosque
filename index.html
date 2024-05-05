@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,69 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="map"></div>
-    <div class="controls">
-        <label for="radius">Circle Radius:<span id="radiusValue">500</span> meters</label>
-        <input type="range" id="radius" min="100" max="1000" value="500">
-        <label for="opacity">Circle Opacity:<span id="opacityValue">0.5</span></label>
-        <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.5">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Проект "Пешком в мечеть"</h1>
+        </header>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <h2>О проекте</h2>
+            <p>
+                Проект "Мечети в каждом дворе" направлен на обеспечение доступа верующих к молитвенным службам,
+                предоставляя возможность посещать мечети для выполнения обязательных пятикратных молитв прямо в районе
+                проживания. Планируется строительство мечетей таким образом, чтобы каждый житель мог дойти до них пешком
+                за 10-15 минут, что обеспечит удобство и доступность для всех верующих. Каждая мечеть будет создана по
+                готовым проектам и оснащена современными технологиями умного дома, что сделает их функциональными и
+                комфортными местами для молитвы и общения. Проект отличается экономичностью в возведении, мобильностью и
+                простотой во внешнем виде, при этом обеспечивая максимальное удобство для всех верующих. Для покрытия
+                всей территории Казани, где проживают люди, кругами радиусом 1 км, планируется установка мечетей в
+                центре каждого круга, что обеспечит равномерное покрытие и доступность для всех жителей.
+            </p>
+
+            <div id="map"></div>
+            <div class="controls">
+                <label for="radius">Радиус круга:<span id="radiusValue">500</span> м.</label>
+                <input type="range" id="radius" min="100" max="1000" value="500">
+                <label for="opacity">Прозрачность круга:<span id="opacityValue">0.5</span></label>
+                <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.5">
+            </div>
+
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            <script src="script.js"></script>
+
+            <h2>Проекты мечетей</h2>
+
+            <div class="project-container">
+                <div class="column">
+                    <img src="images/mosque1.jpg" alt="Image 1">
+                    <p>Проект мечети 1</p>
+                </div>
+                <div class="column">
+                    <img src="images/mosque2.jpg" alt="Image 2">
+                    <p>Проект мечети 2</p>
+                </div>
+                <div class="column">
+                    <img src="images/mosque3.jpg" alt="Image 3">
+                    <p>Проект мечети 3</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 My One Page Website
+    </footer>
+
 </body>
+
 </html>

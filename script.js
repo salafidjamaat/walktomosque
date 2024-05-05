@@ -11,11 +11,16 @@ class Mosque {
 
 // Create a list of mosques
 const mosques = [
-    new Mosque(49.10512650844402, 55.79834156721693, "Qolşärif Mosque", "Qolşärif", "Kremlyovskaya St., 12"),
-    new Mosque(49.118017639153784, 55.77987771782562, "Marcani Mosque", "Marcani", "Bulak River Embankment"),
+    new Mosque(49.10512650844402, 55.79834156721693, "Qolşärif Mosque", "Qulshareef", "Kremlyovskaya St., 12"),
+    new Mosque(49.118017639153784, 55.77987771782562, "Marcani Mosque", "Marjani", "Bulak River Embankment"),
     new Mosque(49.11425398745822, 55.78302694044884, "Nurullah", "Nurullah", ""),
     new Mosque(49.13276398028107, 55.81890102004069, "Kazan Nury", "KN", "улица Фатыха Амирхана, 3 к2"),
+    new Mosque(49.119760674644816, 55.83502946463274, "Bulgar", "Bulgar", "улица Мусина, 10"),
     // Add more mosques as needed
+];
+
+const project_mosques = [
+    new Mosque(49.154658941243234, 55.84267848569721, "Project1", "Project Mosque", ""),
 ];
 
 var kazanBorders = [
@@ -74,6 +79,25 @@ function createCircles() {
         var circle = L.circle([mosque.latitude, mosque.longitude], {
             color: 'red',
             fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500 // Initial radius
+        }).addTo(map);
+        circles.push(circle);
+
+        // Create text label inside circle
+        var text = L.marker([mosque.latitude, mosque.longitude], {
+            icon: L.divIcon({
+                className: 'text-label',
+                html: `<div>${mosque.shortName}</div>`
+            })
+        }).addTo(map);
+
+    });
+
+    project_mosques.forEach(mosque => {
+        var circle = L.circle([mosque.latitude, mosque.longitude], {
+            color: 'green',
+            fillColor: 'green',
             fillOpacity: 0.5,
             radius: 500 // Initial radius
         }).addTo(map);
